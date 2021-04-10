@@ -10,11 +10,19 @@
 <div id="kom1">
 <p>my name is komboz {{name}}{{age}}</p>    
 <span>    {{showAge()}}</span>
+
+<!-- flow control in vue  -->
+<p v-if="age > 25">this is age older</p>
+<strong v-else-if="age < 29">this is a else </strong>
+<strong v-else="age == 0">this is a zero  </strong>
+<!-- end flo control example -->
+
 </div>
 
 <div id="test21">
 
 </div>
+
 
 <script src="vue.js"></script>
 
@@ -24,16 +32,16 @@ var vm = new Vue ({
 el : '#kom1',
 data: {
 name : 'kombozya 3am', 
-age: 29 
+age:0 
 },
 methods: {
 
-        showName(){
-        return 'my name is feras '
-        },
-        showAge(){
-            return "${this.age}"
-        }
+showName(){
+return 'my name is feras '
+},
+showAge(){
+return "${this.age}"
+}
 }
 })
 
