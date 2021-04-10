@@ -17,6 +17,11 @@
 <strong v-else="age == 0">this is a zero  </strong>
 <!-- end flo control example -->
 
+<!-- v-once => dont update a item or tage  -->
+<p v-once>{{major}}</p>
+<p v-show="str">This is a : {{str}}</p> <!-- v-show=" "-->
+
+
 </div>
 
 <div id="test21">
@@ -32,6 +37,8 @@ var vm = new Vue ({
 el : '#kom1',
 data: {
 name : 'kombozya 3am', 
+major : "developer",
+str   : "almansora",
 age:0 
 },
 methods: {
