@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 </head>
 <body>
 
-    <div class="kom">
-    <p>my name is komboz {{name}}</p>    
-    </div>
+<div id="kom1">
+<p>my name is komboz {{name}}{{age}}</p>    
+<span>    {{showAge()}}</span>
+</div>
 
-    <script src="vue.js"></script>
-    <script>
+<div id="test21">
 
-        var vm = new Vue ({
-            el : '#kom',
-            data: {
-                name : 'kombozya 3am'
-            }
-        })
+</div>
 
-    </script>
-    
+<script src="vue.js"></script>
+
+<script>
+
+var vm = new Vue ({
+el : '#kom1',
+data: {
+name : 'kombozya 3am', 
+age: 29 
+},
+methods: {
+
+        showName(){
+        return 'my name is feras '
+        },
+        showAge(){
+            return "${this.age}"
+        }
+}
+})
+
+</script>
+
 </body>
 </html>
