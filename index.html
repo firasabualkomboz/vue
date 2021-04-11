@@ -28,7 +28,17 @@
 
 <!-- on click event  -->
 <strong>{{counter}}</strong>
-<button @click="counter +=10">click </button>
+<button @click.middle="counter +=10">click </button>
+
+<!-- ------------------------------------------------------------------ test v-model -------------------------------------------------------- -->
+    <form action="">
+        
+<input type="text" :value="model" placeholder="comon test">
+<input type="text" v-model="model" placeholder="this is a king ">
+
+    </form>
+<p>{{model}}</p>
+
 </div>
 
 <div id="test21">
@@ -43,12 +53,13 @@
 var vm = new Vue ({
 el : '#kom1',
 data: {
-name : 'kombozya 3am', 
-major : "developer",
-str   : "almansora",
-imgsrc : "image/background.jpg",
+name         : 'kombozya 3am', 
+major        : "developer",
+str          : "almansora",
+imgsrc       : "image/background.jpg",
 go_to_google : 'www.google.com',
-counter : 0,
+counter      : 0,
+model        : "feras",
 age:0 
 },
 methods : {
