@@ -31,14 +31,28 @@
 <button @click.middle="counter +=10">click </button>
 
 <!-- ------------------------------------------------------------------ test v-model -------------------------------------------------------- -->
-    <form action="">
-        
+<form action="">
+
 <input type="text" :value="model" placeholder="comon test">
 <input type="text" v-model="model" placeholder="this is a king ">
 
-    </form>
+</form>
 <p>{{model}}</p>
+<!-- ------------------------------------------------------------------ create Components  -------------------------------------------------------- -->
+<app-count></app-count>
 
+<!-- ------------------------------------------------------------------ first application by me   ---------------------------------------------------------->
+
+<button @click="count_order ++">a plus </button>
+<p>{{count_order}}</p>
+<button @click="count_order --">decrease</button>
+<button @click="count_order =0">clear val</button>
+<span>or choice defult val </span>
+<ol>
+    <li @click="count_order =10"><button>10</button></li>
+    <li @click="count_order =20"><button>20</button></li>
+    <li @click="count_order =30"><button>30</button></li>
+</ol>
 </div>
 
 <div id="test21">
@@ -49,6 +63,15 @@
 <script src="vue.js"></script>
 
 <script>
+Vue.component('app-count', {
+    data : function(){
+        return {
+            name : 'feras',
+            count : 0
+        }
+    },
+    template : '<p @click="count++">this is a first components {{count}}</p>'
+})
 
 var vm = new Vue ({
 el : '#kom1',
@@ -60,6 +83,7 @@ imgsrc       : "image/background.jpg",
 go_to_google : 'www.google.com',
 counter      : 0,
 model        : "feras",
+count_order  : 0, 
 age:0 
 },
 methods : {
