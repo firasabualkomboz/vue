@@ -21,7 +21,14 @@
 <p v-once>{{major}}</p>
 <p v-show="str">This is a : {{str}}</p> <!-- v-show=" "-->
 
+<!-- v-bind  -->
+<a :href="go_to_google">
+<!-- <img v-bind:src="imgsrc" alt=""> -->
+</a>
 
+<!-- on click event  -->
+<strong>{{counter}}</strong>
+<button @click="counter +=10">click </button>
 </div>
 
 <div id="test21">
@@ -39,9 +46,12 @@ data: {
 name : 'kombozya 3am', 
 major : "developer",
 str   : "almansora",
+imgsrc : "image/background.jpg",
+go_to_google : 'www.google.com',
+counter : 0,
 age:0 
 },
-methods: {
+methods : {
 
 showName(){
 return 'my name is feras '
