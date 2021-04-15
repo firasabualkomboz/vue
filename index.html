@@ -53,6 +53,10 @@
     <li @click="count_order =20"><button>20</button></li>
     <li @click="count_order =30"><button>30</button></li>
 </ol>
+
+<!-- local compo -->
+
+<apparticleitem></apparticleitem>
 </div>
 
 <div id="test21">
@@ -63,6 +67,17 @@
 <script src="vue.js"></script>
 
 <script>
+    
+    var apparticleitem = {
+        data : function(){
+        return {
+            name : 'feras',
+            count : 0
+        }
+    },
+    template : '<p> item </p>'
+    }
+
 Vue.component('app-count', {
     data : function(){
         return {
@@ -72,6 +87,19 @@ Vue.component('app-count', {
     },
     template : '<p @click="count++">this is a first components {{count}}</p>'
 })
+
+// local components 
+
+Vue.component('apparticleitem', {
+    data : function(){
+        return {
+            name : 'feras',
+            count : 0
+        }
+    },
+    template : '<p> item </p>'
+})
+
 
 var vm = new Vue ({
 el : '#kom1',
@@ -97,6 +125,17 @@ return "${this.age}"
 }
 })
 
+var vm = new Vue ({
+    e2: '#komboz',
+    data:{
+
+    },
+
+    components: {
+'app-article': app-count,
+}
+
+})
 </script>
 
 </body>
