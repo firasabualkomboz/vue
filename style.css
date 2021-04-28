@@ -1,0 +1,15 @@
+#section-filter{
+    background-color: rgb(2, 78, 97);
+    padding: 20px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.msg-validation {
+    background-color: gold;
+    padding: 20px;
+    text-transform: capitalize;
+    width: 20%;
+    cursor: pointer;
+    border-radius: 8px;
+}

@@ -57,12 +57,33 @@
 <!-- local compo -->
 
 <apparticleitem></apparticleitem>
+
+<!-- function calc age  -->
+<p>{{calcAge}}</p>
+<strong>{{convertmsg}}</strong>
+
+
+<!-- start filter example  -->
+
+<label for="">search about programming language : </label>
+<input type="text" v-modal="findlanguage">
+
+<ul>
+    <li v-for="lang in filterlanguages">
+        {{lang}}
+    </li>
+</ul>
+
+<!-- end filter example  -->
 </div>
 
 <div id="test21">
 
 </div>
 
+
+
+    
 
 <script src="vue.js"></script>
 
@@ -112,9 +133,23 @@ go_to_google : 'www.google.com',
 counter      : 0,
 model        : "feras",
 count_order  : 0, 
-age:0 
+age:20 , 
+message : "this is komboz ",
+findlanguage: "",
+
+languages: [
+    'html',
+    'css',
+    'js',
+    'node',
+    'php',
+    'frameworks',
+],
+
 },
-methods : {
+methods:{
+
+
 
 showName(){
 return 'my name is feras '
@@ -122,8 +157,36 @@ return 'my name is feras '
 showAge(){
 return "${this.age}"
 }
-}
+},
+computed: {
+
+    // calcAge: function(){
+    //     console.log('Run');
+    //     return this.age * 2;
+    // },
+
+    // convertmsg: function(){
+    //     console.log('Run');
+    //     return this.message.split('').reverse().join('');
+    // },
+
+    // function get languages 
+
+    filterlanguages: function (){
+
+        var filtering = new RegExp(this.filterlanguage,'i');
+        return this.languages.filter(function(el){
+            return el.match(filtering);
+        })
+    
+    }
+
+},
+
 })
+
+
+
 
 var vm = new Vue ({
     e2: '#komboz',
@@ -131,12 +194,15 @@ var vm = new Vue ({
 
     },
 
-    components: {
+components: {
 'app-article': app-count,
 }
 
 })
 </script>
+
+
+
 
 </body>
 </html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vaildation Example</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+    <div id="section-validation">
+        
+        <label>write user name please</label>
+        <input type="text" v-model="username">
+        <p class="msg-validation">{{validateUsername}}</p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+    <script>
+
+var vm = new Vue({
+
+  el: '#section-validation',
+
+  data: {
+    username: '',
+
+    
+},
+  methods: {
+  
+  },
+  computed:{
+
+    validateUsername: function(){
+        if(!this.username){
+            return "user name cont be empty ";
+            
+        }else if (this.username.length < 8){
+            return 'Username is to short'
+        }else if (! isNaN (this.username)) {
+            return 'the user name cont be number';
+        }else{
+            return 'welcome' +  this.username + 'ramadan kareem';
+        }
+    },   
+
+ },
+
+
+}) /* end a script vue  */
+
+    </script>
+
+</body>
+</html>
