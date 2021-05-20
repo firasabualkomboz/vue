@@ -13,6 +13,23 @@
     cursor: pointer;
     border-radius: 8px;
 }
+.about-example{
+    text-transform: capitalize;
+    text-align: center;
+}
+.about-example h2{
+    color: #3FB984;
+}
+.convert-currency{
+    text-transform: uppercase;
+    color: #31475E;
+}
+.convert-currency input{
+    border: none;
+    background-color: #31475E;
+    color: #fff;
+    padding: 10px;
+}
 .style-clc{
     text-transform: uppercase;
     color: #31475E;
